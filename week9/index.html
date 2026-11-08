@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Laundry Queue prevents overlapping dorm laundry bookings.">
+  <title>Laundry Queue</title>
+  <link rel="stylesheet" href="queue.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../">Week 9 submission</a>
+    <div class="identity">
+      <strong>Laundry Queue</strong>
+      <span>洪英佩 / 111211147</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="booking" aria-labelledby="booking-title">
+      <h1 id="booking-title">Book a machine</h1>
+      <form id="booking-form">
+        <label>
+          Resident
+          <input name="resident" maxlength="30" placeholder="Room 302 / Mei" required>
+        </label>
+        <label>
+          Machine
+          <select name="machine" required>
+            <option value="Washer 1">Washer 1</option>
+            <option value="Washer 2">Washer 2</option>
+            <option value="Dryer 1">Dryer 1</option>
+            <option value="Dryer 2">Dryer 2</option>
+          </select>
+        </label>
+        <div class="time-fields">
+          <label>
+            Start
+            <input id="start-time" name="start" type="datetime-local" required>
+          </label>
+          <label>
+            Minutes
+            <input name="duration" type="number" min="15" max="180" step="5" value="45" required>
+          </label>
+        </div>
+        <button class="book-button" type="submit">Add to queue</button>
+        <p id="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="board" aria-labelledby="board-title">
+      <div class="board-header">
+        <div>
+          <h2 id="board-title">Machine schedule</h2>
+          <p id="queue-summary"></p>
+        </div>
+        <div class="board-actions">
+          <button id="add-example" type="button">Example schedule</button>
+          <button id="clear-finished" type="button">Clear finished</button>
+        </div>
+      </div>
+
+      <nav class="machine-filter" aria-label="Filter by machine">
+        <button class="active" type="button" data-machine="all">All</button>
+        <button type="button" data-machine="Washer 1">Washer 1</button>
+        <button type="button" data-machine="Washer 2">Washer 2</button>
+        <button type="button" data-machine="Dryer 1">Dryer 1</button>
+        <button type="button" data-machine="Dryer 2">Dryer 2</button>
+      </nav>
+
+      <div class="schedule-table">
+        <div class="schedule-head" aria-hidden="true">
+          <span>Machine</span>
+          <span>Resident</span>
+          <span>Start</span>
+          <span>Finish</span>
+          <span>Status</span>
+          <span></span>
+        </div>
+        <div id="schedule-rows"></div>
+        <p id="empty-queue" hidden>The queue is clear.</p>
+      </div>
+
+      <aside class="rules">
+        <strong>Shared laundry rules</strong>
+        <p>Bookings on the same machine cannot overlap. Finished sessions can be cleared without affecting future reservations.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>Cloudflare Pages · localStorage queue · no account required</footer>
+  <script src="queue.js"></script>
+</body>
+</html>
