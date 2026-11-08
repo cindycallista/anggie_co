@@ -12,6 +12,7 @@
 | 6 | [Hack CPU design](05/hack-cpu-design.md) |
 | 7 | [CPU, Memory, and Computer](05) |
 | 8 | [IC EDA report](week8) |
-| 9 | [Laundry Queue Cloudflare app](week9) |
 
-Projects 01–05 follow the nand2tetris hardware specification. Each HDL or ASM file can be opened directly for grading. Week 8 documents the EDA exercise, and Week 9 contains a browser-ready Cloudflare Pages application.
+<img width="903" height="645" alt="image" src="https://github.com/user-attachments/assets/68e3532f-3b3e-4e42-958f-2ecc70b610f5" />
+
+
