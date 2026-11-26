@@ -1,0 +1,24 @@
+class Main {
+    function void main() {
+        var Point p;
+        var Array a;
+        var int i;
+        var String s;
+        let p = Point.new(3, 4);
+        do p.shift(2);
+        let a = Array.new(5);
+        let i = 0;
+        while (i < 5) {
+            let a[i] = i * 2;
+            let i = i + 1;
+        }
+        if (a[2] = 4 & ~(p.sum() < 0)) {
+            let s = "ok // not a comment";
+            do Output.printString(s);
+        } else {
+            do Output.printInt(-1);
+        }
+        do p.dispose();
+        return;
+    }
+}
